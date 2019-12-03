@@ -1,16 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Django Numbers</title>
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+	<!-- Bootstrap Stylesheet -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-		<h1>Random number: {{ number }}</h1>
+		<div class="container">
+			{% if number %}
+				<h1>Random number: {{ number }}</h1>
 
-		<p>{{ response_text }}
+				<p>{{ response_text }}
 
-		<h2>Random Fact</h2>
+				<h2>Random Fact</h2>
 
-		<p>{{ response2_text }}</p>
+				<p>{{ response2_text }}</p>
 
+
+				<h1>Random Number: {{ number2 }}</h1>
+
+				<p>{{ response3_text }}</p>
+
+				<h2>Maths Fact</h2>
+
+				<p>{{ response4_text }}</p>
+			{% else %}
+				<p> The Numbers API does not seem to be workking at the moment. Please try again.</p>
+			{% endif %}
+		</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
